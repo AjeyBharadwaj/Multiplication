@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define THRESHOLD 2
+
 typedef enum{
     _INT,
     _STR
@@ -37,8 +39,6 @@ int *multiply(char *a, int a_len, char *b, int b_len, int *c, int skip) {
     int i, j;
     int index;
 
-    //printf("Len : %d : %d\n", a_len, b_len);
-
     memset(ans, 0, (a_len + b_len)*sizeof(int));
     
     for(i = b_len-1; i >= 0; i--, skip++) {
@@ -48,17 +48,10 @@ int *multiply(char *a, int a_len, char *b, int b_len, int *c, int skip) {
             ans[index] += ans[index+1]/10;
             ans[index+1] %= 10;
         }
-        /* 
-        printf("Iterations : %d : ", i);
-        print(_INT, ans, a_len+b_len);
-        printf("\n");
-        */
     }
 
     return 0;
 }
-
-#define THRESHOLD 2 
 
 int *divide_conquer_multiply(char *a, char *b, int skip) {
     int a_len = strlen(a);  
@@ -82,12 +75,6 @@ int *divide_conquer_multiply(char *a, char *b, int skip) {
         
         return ans; 
     }
-
-    /*
-    printf("Multiplying : %s * %s = ", a, b); 
-    print(_INT, ans, a_len + b_len);
-    printf("\n");
-    */
 }
 
 int main(int argc, char *argv[]) {

@@ -1,2 +1,20 @@
-Normal Multiplication
-Divide and Conquer
+Multiplication : Different implementations to multiply huge numbers.
+
+How to Run : 
+    1. Compile multiply.c
+    2. Compile random_numbers.c
+    3. Generate random numbers : ./random_numbers <Len of num1> <Len of num2>
+    4. Execute this : ./random_numbers 1024 1024 | xargs ./multiply
+
+    1. Normal Multiplication        : Normal Multiplication.
+    2. Divide and Conquer           : Divide num2 to half till THRESHOLD
+    3. Divide and Conquer Multiple  : Divide num1 and num2 till THRESHOLD
+
+NOTE : 
+    1. You can modify THRESHOLD to find the best len of num1 and num2 on which normal multiplication has to be executed.
+    2. Use : https://defuse.ca/big-number-calculator.htm website to cross verify.
+   
+BUGS : 
+    1. Divide and Conquer           : Num2 should be multiple of power of 2.
+    2. Divide and Conquer Multiple  : Num1 and Num2 should be multiple of power of 2.
+
